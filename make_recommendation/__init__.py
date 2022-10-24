@@ -20,7 +20,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if name:
         test = pd.DataFrame({'name': [name], 'value': ['1']})
-        return func.HttpResponse(f"Hello, {json.dumps(test.iloc[0, :].to_list())}. This HTTP triggered function executed successfully.")
+        return func.HttpResponse(f"Hello, {json.dumps(test.iloc[0, :].to_list())}.")
     else:
         test = np.array(['status', '200'])
         return func.HttpResponse(
