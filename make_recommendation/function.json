@@ -15,6 +15,13 @@
       "type": "http",
       "direction": "out",
       "name": "$return"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "artDf",
+      "path": "api-files/articles_metadata.csv",
+      "connection": "AzureWebJobsStorage"
     }
   ]
 }

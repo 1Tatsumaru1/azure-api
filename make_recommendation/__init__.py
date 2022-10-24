@@ -4,9 +4,13 @@ import azure.functions as func
 import pandas as pd
 import numpy as np
 import json
+import os
 
 
-def main(req: func.HttpRequest) -> func.HttpResponse:
+connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
+
+
+def main(req: func.HttpRequest, artDf) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     name = req.params.get('name')
@@ -18,11 +22,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         else:
             name = req_body.get('name')
 
+    art_df = pd.read_csv(artDf)
+
     if name:
-        test = pd.DataFrame({'name': [name], 'value': ['1']})
-        return func.HttpResponse(f"Hello, {json.dumps(test.iloc[0, :].to_list())}.")
+        return func.HttpResponse(f"Hello, {json.dumps(art_df.iloc[0, :].to_list())}.")
     else:
-        test = np.array(['status', '200'])
         return func.HttpResponse(
              "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
              status_code=200
