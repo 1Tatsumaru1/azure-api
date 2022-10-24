@@ -19,9 +19,10 @@
     {
       "type": "blob",
       "direction": "in",
+      "dataType": "binary",
       "name": "artDf",
       "path": "api-files/articles_metadata.csv",
-      "connection": "AzureWebJobsStorage"
+      "connection": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING"
     }
   ]
 }
