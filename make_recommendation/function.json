@@ -20,24 +20,8 @@
       "type": "blob",
       "direction": "in",
       "dataType": "binary",
-      "name": "artDf",
-      "path": "api-files/articles_metadata.csv",
-      "connection": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING"
-    },
-    {
-      "type": "blob",
-      "direction": "in",
-      "dataType": "binary",
-      "name": "svdModel",
-      "path": "api-files/svd_art.pkl",
-      "connection": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING"
-    },
-    {
-      "type": "blob",
-      "direction": "in",
-      "dataType": "binary",
-      "name": "artByUser",
-      "path": "api-files/articles_by_user.csv",
+      "name": "recoDf",
+      "path": "api-files/reco_df.csv",
       "connection": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING"
     }
   ]
